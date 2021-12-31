@@ -11,10 +11,13 @@ def clr():
     else:
         _ = system('clear')
 
+clr()
+time.sleep(0.4)
 # Starts an infinite loop of showing the time
 while True:
     tme = datetime.datetime.now()
     b = str(tme.strftime("%H:%M"))
-    tprint(b)
+    a = b.center(60)
+    tprint(a)
     time.sleep(1)
     clr()
