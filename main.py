@@ -1,4 +1,5 @@
 import datetime
+import time
 from os import system, name
 
 def clr():
@@ -11,4 +12,5 @@ def clr():
 while True:
     tme = datetime.datetime.now()
     print(tme.strftime("%H:%M"))
+    time.sleep(1)
     clr()
