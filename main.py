@@ -1,9 +1,7 @@
 # Import libraries
 import datetime
 import time
-import termios
-import struct
-import fcntl
+import shutil
 from os import system, name
 from art import tprint
 
@@ -14,17 +12,15 @@ def clr():
     else:
         _ = system('clear')
 
-cols = system('tput cols')
+def print_centre(s):
+    tprint(s.center(shutil.get_terminal_size().columns))
+
 clr()
 time.sleep(0.4)
 # Starts an infinite loop of showing the time
 while True:
-    num2 = 2
-    width = 18
-    c = int(cols / num2 - width * 3)
     tme = datetime.datetime.now()
     b = str(tme.strftime("%H:%M"))
-    a = b.center(c)
-    tprint(a)
+    print_centre(b)
     time.sleep(1)
     clr()
